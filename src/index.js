@@ -16,7 +16,7 @@
  */
 import { refs } from './js/refs';
 import { createTaskMarkup } from './js/createTaskMarkup';
-
+import { localStorageAPI } from './js/localStorageApi';
 refs.form.addEventListener('submit', onFormSubmit);
 
 function onFormSubmit(e) {
@@ -25,6 +25,8 @@ function onFormSubmit(e) {
   new FormData(refs.form).forEach((value, key) => {
     dataObj[key] = value;
   });
+
+  localStorageAPI.addTask(dataObj);
 
   const markup = createTaskMarkup(dataObj);
   refs.list.insertAdjacentHTML('beforeend', markup);
