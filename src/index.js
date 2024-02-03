@@ -14,3 +14,19 @@
  * прибрати завдання зі списку.
  * Список із завданнями має бути доступним після перезавантаження сторінки.
  */
+import { refs } from './js/refs';
+import { createTaskMarkup } from './js/createTaskMarkup';
+
+refs.form.addEventListener('submit', onFormSubmit);
+
+function onFormSubmit(e) {
+  e.preventDefault();
+  const dataObj = {};
+  new FormData(refs.form).forEach((value, key) => {
+    dataObj[key] = value;
+  });
+
+  const markup = createTaskMarkup(dataObj);
+  refs.list.insertAdjacentHTML('beforeend', markup);
+  refs.form.reset();
+}
