@@ -17,6 +17,8 @@
 import { refs } from './js/refs';
 import { createTaskMarkup } from './js/createTaskMarkup';
 import { localStorageAPI } from './js/localStorageApi';
+import { renderTasks } from './js/renderTasks';
+
 refs.form.addEventListener('submit', onFormSubmit);
 
 function onFormSubmit(e) {
@@ -32,3 +34,5 @@ function onFormSubmit(e) {
   refs.list.insertAdjacentHTML('beforeend', markup);
   refs.form.reset();
 }
+
+renderTasks();
