@@ -1,2 +1,0 @@
-!function(){var t={form:document.querySelector("#task-form"),list:document.querySelector("#task-list")};function e(t){return'<li class="task-list-item">\n      <button class="task-list-item-btn">Видалити</button>\n      <h3>'.concat(t.taskName,"</h3>\n      <p>").concat(t.taskText,"</p>\n   </li>")}t.form.addEventListener("submit",(function(n){n.preventDefault();var r={};new FormData(t.form).forEach((function(t,e){r[e]=t}));var a=e(r);t.list.insertAdjacentHTML("beforeend",a),t.form.reset()}))}();
-//# sourceMappingURL=index.f05640de.js.map
